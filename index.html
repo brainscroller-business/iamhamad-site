@@ -9,7 +9,6 @@
   <link rel="icon" href="/favicon.ico" sizes="any" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-
   <script src="https://cdn.tailwindcss.com"></script>
 
   <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -319,18 +318,34 @@
           </h1>
         </ScrollReveal>
 
-        {/* Cinematic spacing maintained */}
-        <ScrollReveal delay="100ms" className="mb-40 md:mb-[70vh] max-w-2xl mx-auto text-center">
-          <p
-            className="font-light text-white/85 leading-snug"
-            style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}
-          >
-            I’m <span className="text-white font-bold">Hamad Almheiri</span>.
-            <br />
-            An Emirati founder obsessed with speed, compounding, and building systems that don’t rot.
-            <br />
-            Engineering a future where we <span className="text-red-400 italic font-serif">grow</span>, not scroll.
-          </p>
+        {/* UPDATED: text + portrait (me.png) */}
+        <ScrollReveal delay="100ms" className="mb-40 md:mb-[70vh] max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-center md:text-left">
+            <div>
+              <p
+                className="font-light text-white/85 leading-snug"
+                style={{ fontSize: "clamp(1rem, 1.5vw, 1.25rem)" }}
+              >
+                I’m <span className="text-white font-bold">Hamad Almheiri</span>.
+                <br />
+                An Emirati founder obsessed with speed, compounding, and building systems that don’t rot.
+                <br />
+                Engineering a future where we <span className="text-red-400 italic font-serif">grow</span>, not scroll.
+              </p>
+            </div>
+
+            <div className="flex justify-center md:justify-end">
+              <div className="relative w-[220px] h-[220px] md:w-[280px] md:h-[280px] rounded-2xl overflow-hidden border border-white/10 bg-white/5">
+                <img
+                  src="/me.png"
+                  alt="Hamad Almheiri"
+                  className="w-full h-full object-cover opacity-90"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                <div className="absolute -inset-6 bg-red-500/10 blur-3xl pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
         </ScrollReveal>
 
         <ScrollReveal delay="200ms" className="mb-16 md:mb-20 w-full flex flex-col items-start relative">
@@ -411,24 +426,24 @@
         </ScrollReveal>
 
         <ScrollReveal delay="200ms" className="mb-20 flex flex-wrap justify-center gap-4 md:gap-6">
-            <button
-              onClick={() => setActiveTab('company')}
-              className="px-6 py-3 border border-white/20 bg-white/5 hover:bg-red-500 hover:border-red-500 hover:text-black transition-all duration-300 rounded text-xs font-bold uppercase tracking-widest"
-            >
-              BrainScroller
-            </button>
-            <button
-              onClick={() => setActiveTab('youtube')}
-              className="px-6 py-3 border border-white/20 bg-white/5 hover:bg-red-500 hover:border-red-500 hover:text-black transition-all duration-300 rounded text-xs font-bold uppercase tracking-widest"
-            >
-              The Accelerated Mind
-            </button>
-            <button
-              onClick={() => setActiveTab('blog')}
-              className="px-6 py-3 border border-white/20 bg-white/5 hover:bg-red-500 hover:border-red-500 hover:text-black transition-all duration-300 rounded text-xs font-bold uppercase tracking-widest"
-            >
-              The Manifesto
-            </button>
+          <button
+            onClick={() => setActiveTab('company')}
+            className="px-6 py-3 border border-white/20 bg-white/5 hover:bg-red-500 hover:border-red-500 hover:text-black transition-all duration-300 rounded text-xs font-bold uppercase tracking-widest"
+          >
+            BrainScroller
+          </button>
+          <button
+            onClick={() => setActiveTab('youtube')}
+            className="px-6 py-3 border border-white/20 bg-white/5 hover:bg-red-500 hover:border-red-500 hover:text-black transition-all duration-300 rounded text-xs font-bold uppercase tracking-widest"
+          >
+            The Accelerated Mind
+          </button>
+          <button
+            onClick={() => setActiveTab('blog')}
+            className="px-6 py-3 border border-white/20 bg-white/5 hover:bg-red-500 hover:border-red-500 hover:text-black transition-all duration-300 rounded text-xs font-bold uppercase tracking-widest"
+          >
+            The Manifesto
+          </button>
         </ScrollReveal>
 
       </div>
@@ -555,24 +570,11 @@
               <span className="font-mono text-red-500 tracking-widest text-[10px] uppercase">SYSTEM ARCHITECTURE</span>
             </div>
 
-            {/* UPDATED SYSTEM ARCHITECTURE WITH ICONS */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
               {[
-                { 
-                  icon: RefreshCw,
-                  title: "Replace The Feed", 
-                  desc: "Keep the reflex. Change the input. Swap dopamine hits for insight sparks." 
-                },
-                { 
-                  icon: Globe,
-                  title: "Daily Global Briefing", 
-                  desc: "Stay aware. Sources distilled into a fast, readable stream." 
-                },
-                { 
-                  icon: Book,
-                  title: "Brain Library", 
-                  desc: "Save, organize, and build your personal knowledge arsenal." 
-                }
+                { icon: RefreshCw, title: "Replace The Feed", desc: "Keep the reflex. Change the input. Swap dopamine hits for insight sparks." },
+                { icon: Globe, title: "Daily Global Briefing", desc: "Stay aware. Sources distilled into a fast, readable stream." },
+                { icon: Book, title: "Brain Library", desc: "Save, organize, and build your personal knowledge arsenal." }
               ].map((step, i) => (
                 <div
                   key={i}
@@ -937,13 +939,9 @@
             </div>
             <div>
               <p className="text-white/60 font-mono text-[10px] tracking-widest uppercase">INCOMING STREAM</p>
-              
-              {/* UPDATED TITLE */}
               <h2 className="brand-font font-black uppercase leading-[0.9]" style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)" }}>
                 THE ACCELERATED <br /><span className="text-red-500 text-glow-red">MIND</span>
               </h2>
-              
-              {/* UPDATED SUBTITLE */}
               <p className="text-white/60 text-xs mt-3">Latest Episodes</p>
             </div>
           </div>
